@@ -4,6 +4,23 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            justify-content: center
+        }
+
+        @media (max-width: 576px) {
+            #filters {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+        }
+
+        /* Small devices (tablets) */
+        @media (max-width: 768px) {
+            #filters {
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+
         }
 
         .filter {
@@ -33,14 +50,16 @@
             display: none;
         }
 
-        .tax-toggle{
+        .tax-toggle {
             border: 1px solid black;
             border-radius: 1rem;
             height: 3.25rem;
             padding: 1rem;
-            margin-left: 3rem;
+            margin-left: 1rem;
             display: flex;
             align-items: center;
+            width: 320px;
+            text-align: center;
         }
     </style>
 
@@ -112,16 +131,16 @@
             </a>
         </div>
 
-        <div class="tax-toggle">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-            </div>
+    </div>
+    <div class="tax-toggle mt-3">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>        
         </div>
     </div>
 
 
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-5">
         <% for(let listing of allListings) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
                 <div class="card col listing-card">

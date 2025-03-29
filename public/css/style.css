@@ -11,17 +11,12 @@ body{
     flex: 1;
 }
 .navbar{
-    height: 5rem;
+    height: 6rem;
     background-color: white;
 }
 
-.fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
-}
-
-.nav-link{
-    color: #222222 !important;
+.navbar-brand{
+ margin-left: 2rem;
 }
 
 /* Footer */

@@ -1,11 +1,17 @@
 <style>
-    .search-btn{
+    form {
+        width: 750px;
+        background-color: rgb(252, 251, 251);
+    }
+
+    .search-btn {
         background-color: #fe424d;
         color: white;
         border-radius: 25px;
         padding: 0 1rem 0 1rem;
     }
-    .search-btn:hover{
+
+    .search-btn:hover {
         background-color: #fe424d;
         color: white;
     }
@@ -15,40 +21,59 @@
         margin: 0 0.5rem 0 0.5rem;
     }
 
-    .search-inp{
+    .search-inp {
         border-radius: 25px;
         padding: 0.5rem 3rem;
         font-size: 1rem;
     }
+
+    input::placeholder {
+        color: gray;
+        font-size: 16px;
+        font-style: italic;
+        opacity: 1;
+        text-align: center;
+    }
+
+    
+@media (max-width: 576px) {
+    form{
+       width: 500px;
+
+    }
+}
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-            <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <a class="navbar-brand " href="/listings">
+            <img src="/2iqpwrul.png" width="50px" alt="Waybnb Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color: white;">
             <div class="navbar-nav">
-                <a class="nav-link" href="/listings">Explore</a>
+                <a class="nav-link" href="/listings" style="font-size: 30px; color: rgb(145 30 145);"><b>Waybnb</b></a>
             </div>
 
             <div class="navbar-nav ms-auto">
                 <form action="/listings/search" method="get" class="d-flex w-10 mx-auto" role="search" id="searchForm">
-                  <input required class="form-control me-2 w-75 search-inp" type="search" placeholder="Search destinations" id="searchInput" name="query">
-                  <button class="btn search-btn">Search</button>
+                    <input required class="form-control me-2 w-75 search-inp" type="search"
+                        placeholder="Search destinations" id="searchInput" name="query">
+                    <button class="btn search-btn"><i class="fas fa-search"></i> <b>Search</b></button>
                 </form>
             </div>
 
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/listings/new">Airbnb your home</a>
+                <a class="nav-link" href="/listings/new">Create Your Listing</a>
                 <% if(!currUser) { %>
-                <a class="nav-link" href="/signup"><b>SignUp</b></a>
-                <a class="nav-link" href="/login"><b>Login</b></a>
-                <% } %>
-                <% if(currUser) { %>
-                <a class="nav-link" href="/logout"><b>Logout</b></a>
-                <% } %>
+                    <a class="nav-link" href="/signup"><b>SignUp</b></a>
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                    <% } %>
+                        <% if(currUser) { %>
+                            <a class="nav-link" href="/logout"><b>Logout</b></a>
+                            <% } %>
             </div>
         </div>
     </div>

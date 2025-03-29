@@ -1,164 +1,177 @@
 <% layout("/layouts/boilerplate") %>
-
-<style>
-    #filters-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    #filters {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Medium Screens (Dropdown for Extra Categories) */
-    @media (max-width: 992px) {
+    <style>
         #filters {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            overflow-x: auto;
-            max-width: 80%;
+            align-items: center;
+            justify-content: center
         }
 
-        #dropdownMenu {
-            display: block;
-        }
-    }
-
-    /* Small Screens (Toggle Sidebar) */
-    @media (max-width: 768px) {
-        #filters {
-            display: none; /* Hide default categories */
+        @media (max-width: 576px) {
+            #filters {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
         }
 
-        #toggleMenu {
-            display: block;
+        /* Small devices (tablets) */
+        @media (max-width: 768px) {
+            #filters {
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+
         }
-    }
 
-    .filter {
-        text-align: center;
-        margin-right: 1rem;
-        margin-top: 1rem;
-        opacity: 0.85;
-    }
+        .filter {
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 3rem;
+            opacity: 0.85;
+        }
 
-    .filter:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
 
-    .filter a {
-        font-size: 0.9rem;
-        text-decoration: none;
-        color: gray;
-    }
+        .filter a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: gray;
+        }
 
-    .filter i {
-        color: gray;
-        font-size: 1.2rem;
-    }
+        .filter i {
+            color: gray;
+            font-size: 1.2rem;
+        }
 
-    /* Sidebar for Small Screens */
-    #sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background: white;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: left 0.3s ease;
-        padding: 1rem;
-        z-index: 1000;
-    }
+        .tax-info {
+            display: none;
+        }
 
-    #sidebar.active {
-        left: 0;
-    }
+        .tax-toggle {
+            border: 1px solid black;
+            border-radius: 1rem;
+            height: 3.25rem;
+            padding: 1rem;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            width: 320px;
+            text-align: center;
+        }
+    </style>
 
-    #closeSidebar {
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-</style>
-
-<div id="filters-container">
-    <!-- Normal Filters -->
     <div id="filters">
-        <% let categories = [
-            { name: "Trending", icon: "fa-fire", link: "/listings/category/trending" },
-            { name: "Rooms", icon: "fa-bed", link: "/listings/category/rooms" },
-            { name: "Iconic Cities", icon: "fa-mountain-city", link: "/listings/category/iconic_cities" },
-            { name: "Mountains", icon: "fa-mountain", link: "/listings/category/mountains" },
-            { name: "Castles", icon: "fa-fort-awesome", link: "/listings/category/castles" },
-            { name: "Amazing Pools", icon: "fa-person-swimming", link: "/listings/category/amazing_pools" },
-            { name: "Camping", icon: "fa-campground", link: "/listings/category/camping" },
-            { name: "Farms", icon: "fa-tractor", link: "/listings/category/farms" },
-            { name: "Arctic", icon: "fa-snowflake", link: "/listings/category/arctic" },
-            { name: "Domes", icon: "fa-igloo", link: "/listings/category/domes" },
-            { name: "Boats", icon: "fa-ship", link: "/listings/category/boats" }
-        ]; %>
-
-        <% categories.slice(0, 6).forEach(category => { %>
         <div class="filter">
-            <a href="<%= category.link %>">
-                <i class="fa-solid <%= category.icon %>"></i>
-                <p><%= category.name %></p>
+            <a href="/listings/category/trending">
+                <i class="fa-solid fa-fire"></i>
+                <p>Trending</p>
             </a>
         </div>
-        <% }); %>
-    </div>
-
-    <!-- Dropdown for Extra Categories (Medium Screens) -->
-    <div id="dropdownMenu" class="dropdown" style="display: none;">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            More Categories
-        </button>
-        <ul class="dropdown-menu">
-            <% categories.slice(6).forEach(category => { %>
-            <li><a class="dropdown-item" href="<%= category.link %>"><i class="fa-solid <%= category.icon %>"></i> <%= category.name %></a></li>
-            <% }); %>
-        </ul>
-    </div>
-
-    <!-- Toggle Sidebar Button (Small Screens) -->
-    <button id="toggleMenu" class="btn btn-outline-secondary" style="display: none;">
-        <i class="fa-solid fa-bars"></i> Categories
-    </button>
-</div>
-
-<!-- Sidebar for Small Screens -->
-<div id="sidebar">
-    <span id="closeSidebar">&times; Close</span>
-    <ul class="list-unstyled mt-3">
-        <% categories.forEach(category => { %>
-        <li class="mb-2">
-            <a href="<%= category.link %>" class="text-decoration-none text-dark">
-                <i class="fa-solid <%= category.icon %>"></i> <%= category.name %>
+        <div class="filter">
+            <a href="/listings/category/rooms">
+                <i class="fa-solid fa-bed"></i>
+                <p>Rooms</p>
             </a>
-        </li>
-        <% }); %>
-    </ul>
-</div>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/iconic_cities">
+                <i class="fa-solid fa-mountain-city"></i>
+                <p>Iconic Cities</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/mountains">
+                <i class="fa-solid fa-mountain"></i>
+                <p>Mountains</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/castles">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <p>Castles</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/amazing_pools">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Amazing Pools</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/camping">
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/farms">
+                <i class="fa-solid fa-tractor"></i>
+                <p>Farms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/arctic">
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Arctic</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/domes">
+                <i class="fa-solid fa-igloo"></i>
+                <p>Domes</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/listings/category/boats">
+                <i class="fa-solid fa-ship"></i>
+                <p>Boats</p>
+            </a>
+        </div>
 
-<script>
-    // Sidebar Toggle Logic
-    let toggleMenu = document.getElementById("toggleMenu");
-    let sidebar = document.getElementById("sidebar");
-    let closeSidebar = document.getElementById("closeSidebar");
+    </div>
+    <div class="tax-toggle mt-3">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>        
+        </div>
+    </div>
 
-    if (toggleMenu) {
-        toggleMenu.addEventListener("click", () => {
-            sidebar.classList.add("active");
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-5">
+        <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col listing-card">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%= listing.title %>
+                            </b>
+                            <br>
+                            <%= new Intl.NumberFormat("en-IN").format(listing.price) %> / night
+                                <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </div>
+
+    <script>
+        let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+        taxSwitch.addEventListener("click", () => {
+            let taxInfo = document.getElementsByClassName("tax-info");
+            for (info of taxInfo) {
+                if (info.style.display != "inline") {
+                    info.style.display = "inline";
+                }
+                else {
+                    info.style.display = "none";
+                }
+            }
         });
-
-        closeSidebar.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-        });
-    }
-</script>
+    </script>

@@ -10,6 +10,8 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate= require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
+const wrapAsync = require('./utils/WrapAsync.js');
+
 
 const session = require("express-session");
 const MongoStore = require('connect-mongo');

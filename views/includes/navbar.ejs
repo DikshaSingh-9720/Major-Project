@@ -1,6 +1,6 @@
 <style>
     form {
-        width: 750px;
+        width: 50vw;
         background-color: rgb(252, 251, 251);
     }
 
@@ -35,12 +35,19 @@
         text-align: center;
     }
 
-    
-@media (max-width: 576px) {
-    form{
-       width: 500px;
-
-    }
+   
+@media (max-width: 768px) {
+  form{
+     width: 60vw;
+     display: grid;
+ }
+}
+  
+@media (max-width: 480px) {
+  form{
+     width: 90vw;
+     display: grid;
+ }
 }
 </style>
 
@@ -59,7 +66,7 @@
 
             <div class="navbar-nav ms-auto">
                 <form action="/listings/search" method="get" class="d-flex w-10 mx-auto" role="search" id="searchForm">
-                    <input required class="form-control me-2 w-75 search-inp" type="search"
+                    <input required class="form-control me-2 search-inp" type="search"
                         placeholder="Search destinations" id="searchInput" name="query">
                     <button class="btn search-btn"><i class="fas fa-search"></i> <b>Search</b></button>
                 </form>

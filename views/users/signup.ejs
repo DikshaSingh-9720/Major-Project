@@ -1,10 +1,19 @@
 <% layout("/layouts/boilerplate") %>
 
+<style>
+    @media(max-width:768px){
+        .col-6{
+            margin:auto;
+            
+        }
+    }
+</style>
+
 <body>
         <div class="row">
-            <h1 class="col-6 offset-3">SignUp on Wanderlust</h1>
-            <div class="col-6 offset-3">
-                <form action="/signup" method="post" class="needs-validation" novalidate>
+            <h1 class="text-center mb-5 mt-4">SignUp on Wanderlust</h1>
+            <div class="col-6 ">
+                <form action="/signup" method="post" class="needs-validation offset-1" novalidate>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input name="username" id="username" type="text" class="form-control" required>
@@ -18,7 +27,7 @@
                         <label for="pswd" class="form-label">Password</label>
                         <input name="password" id="pswd" type="password" class="form-control" required>
                     </div>
-                    <button class="btn  btn-success">SignUp</button>
+                    <button class="btn  btn-success mt-4 mb-4">SignUp</button>
                 </form>
             </div>
         </div>

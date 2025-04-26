@@ -1,133 +1,70 @@
 <% layout("/layouts/boilerplate") %>
-    <style>
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center
-        }
-
-        @media (max-width: 576px) {
-            #filters {
-                display: grid;
-                grid-template-columns: auto auto;
-            }
-        }
-
-        /* Small devices (tablets) */
-        @media (max-width: 768px) {
-            #filters {
-                display: grid;
-                grid-template-columns: auto auto auto;
-            }
-
-        }
-
-        .filter {
-            text-align: center;
-            margin-right: 2rem;
-            margin-top: 3rem;
-            opacity: 0.85;
-        }
-
-        .filter:hover {
-            opacity: 1;
-            cursor: pointer;
-        }
-
-        .filter a {
-            font-size: 0.8rem;
-            text-decoration: none;
-            color: gray;
-        }
-
-        .filter i {
-            color: gray;
-            font-size: 1.2rem;
-        }
-
-        .tax-info {
-            display: none;
-        }
-
-        .tax-toggle {
-            border: 1px solid black;
-            border-radius: 1rem;
-            height: 3.25rem;
-            padding: 1rem;
-            margin-left: 1rem;
-            display: flex;
-            align-items: center;
-            width: 320px;
-            text-align: center;
-        }
-    </style>
-
+    
     <div id="filters">
         <div class="filter">
             <a href="/listings/category/trending">
-                <i class="fa-solid fa-fire"></i>
-                <p>Trending</p>
+                <i class="fa-solid fa-fire" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Trending</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/rooms">
-                <i class="fa-solid fa-bed"></i>
-                <p>Rooms</p>
+                <i class="fa-solid fa-bed" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Rooms</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/iconic_cities">
-                <i class="fa-solid fa-mountain-city"></i>
-                <p>Iconic Cities</p>
+                <i class="fa-solid fa-mountain-city" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Iconic Cities</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/mountains">
-                <i class="fa-solid fa-mountain"></i>
-                <p>Mountains</p>
+                <i class="fa-solid fa-mountain" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Mountains</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/castles">
-                <i class="fa-brands fa-fort-awesome"></i>
-                <p>Castles</p>
+                <i class="fa-brands fa-fort-awesome" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Castles</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/amazing_pools">
-                <i class="fa-solid fa-person-swimming"></i>
-                <p>Amazing Pools</p>
+                <i class="fa-solid fa-person-swimming" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Amazing Pools</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/camping">
-                <i class="fa-solid fa-campground"></i>
-                <p>Camping</p>
+                <i class="fa-solid fa-campground" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Camping</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/farms">
-                <i class="fa-solid fa-tractor"></i>
-                <p>Farms</p>
+                <i class="fa-solid fa-tractor" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Farms</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/arctic">
-                <i class="fa-solid fa-snowflake"></i>
-                <p>Arctic</p>
+                <i class="fa-solid fa-snowflake" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Arctic</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/domes">
-                <i class="fa-solid fa-igloo"></i>
-                <p>Domes</p>
+                <i class="fa-solid fa-igloo" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Domes</p>
             </a>
         </div>
         <div class="filter">
             <a href="/listings/category/boats">
-                <i class="fa-solid fa-ship"></i>
-                <p>Boats</p>
+                <i class="fa-solid fa-ship" style="font-size:25px;"></i>
+                <p style="font-size:20px;">Boats</p>
             </a>
         </div>
 

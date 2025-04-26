@@ -34,14 +34,14 @@
 }
 
 .filter a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
     color: gray;
 }
 
 .filter i {
     color: gray;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .tax-info {

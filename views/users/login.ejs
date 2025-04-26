@@ -2,21 +2,45 @@
 
 <% layout("/layouts/boilerplate") %>
 
+<style>    
+    @media(max-width:480px){
+        form{
+            width: 70vw;
+        }
+    }
+    @media(min-width:650px){
+        form{
+            width: 40vw;
+        }
+        .mb-3{
+            display: flex;
+        }
+        input{
+            width: 70vw;
+        }
+        
+    }
+    @media(min-width:900px){
+        .mb-3{
+            display: grid;
+        }
+    }
+</style>
 
     <div class="row">
-        <h1 class="mb-5 mt-4 text-center">Login on Wanderlust</h1>
-        <div class="col-6 offset-3">
-            <form action="/login" method="post" class="needs-validation col-12" novalidate>
-                <div class="mb-3 col-md-8 col-sm-12">
-                    <label for="username" class="form-label">Username</label>
-                    <input name="username" id="username" type="text" class="form-control" required>
+        <h1 class="mt-5 mb-5 text-center">Login on Wanderlust</h1>
+        <div>
+            <form action="/login" method="post" class="needs-validation text-center" style="margin: auto;" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label m-3"><b>Username</b></label>
+                    <input name="username" id="username" type="text" class="form-control text-center" required>
                 </div>
 
-                        <div class="mb-3 col-md-8 col-sm-12">
-                            <label for="pswd" class="form-label">Password</label>
-                            <input name="password" id="pswd" type="password" class="form-control" required>
+                        <div class="mb-3">
+                            <label for="pswd" class="form-label m-3"><b>Password</b></label>
+                            <input name="password" id="pswd" type="password" class="form-control text-center" required>
                         </div>
-                        <button class="btn  btn-success">Login</button>
+                        <button class="btn mt-4 btn-success">Login</button>
             </form>
         </div>
     </div>

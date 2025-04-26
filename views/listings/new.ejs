@@ -1,8 +1,21 @@
 <% layout("/layouts/boilerplate") %>
 
+<style>
+    @media(min-width:480px){
+       form{
+           width: 45vw;
+       }
+   }
+   @media(max-width:480px){
+        form{
+            width: 55vw;
+        }
+    }
+</style>
+
     <body>
         <div class="row">
-            <div class="col-8 offset-3">
+            <div class="col-6"  style="margin: auto;">
                 <br><br>
                 <h3>Create a new Listing</h3>
                 <form action="/listings" method="post" novalidate class="needs-validation"

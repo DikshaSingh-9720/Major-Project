@@ -35,8 +35,10 @@
         text-align: center;
     }
 
-   
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
+    .navbar-nav .logoname{
+        display: none;
+    }
   form{
      width: 85vw;
      display: grid;
@@ -44,6 +46,10 @@
 }
   
 @media (max-width: 480px) {
+
+    .navbar-nav .logoname{
+        display: none;
+    }
   form{
      width: 90vw;
      display: grid;
@@ -61,7 +67,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color: white;">
             <div class="navbar-nav">
-                <a class="nav-link" href="/listings" style="font-size: 30px; color: rgb(145 30 145);"><b>Waybnb</b></a>
+                <a class="nav-link logoname" href="/listings" style="font-size: 30px; color: rgb(145 30 145);"><b>Waybnb</b></a>
             </div>
 
             <div class="navbar-nav ms-auto">
@@ -73,7 +79,7 @@
             </div>
 
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/listings/new">Create Your Listing</a>
+                <button class="btn"> <a class="nav-link" href="/listings/new">Create Your Listing</a></button>
                 <% if(!currUser) { %>
                     <a class="nav-link" href="/signup"><b>SignUp</b></a>
                     <a class="nav-link" href="/login"><b>Login</b></a>
